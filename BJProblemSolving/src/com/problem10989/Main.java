@@ -1,31 +1,36 @@
 package com.problem10989;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
 public class Main {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws NumberFormatException, IOException {
 		int n;
-		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-//		n = sc.nextInt();
-		int[] arr = new int[n];
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		n = Integer.parseInt(br.readLine());
+		int[] arr = new int[10001];
 		for (int i = 0; i < n; i++) {
-//			int tmp = sc.nextInt();
-			arr[tmp]++;
+			arr[Integer.parseInt(br.readLine())]++;
 		}
 		countingSort(arr);
+		br.close();
 	}
 
-	public static void countingSort(int[] arr) {
+	public static void countingSort(int[] arr) throws IOException {
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+
 		for (int i = 0; i < arr.length; i++) {
-			int sum = 0;
-			int tmp_sum = sum;
-			while (arr[i] != 0) {
-				arr[i] = arr[i] - tmp_sum;
-				System.out.println(i);
-				arr[i]--;
-				sum++;
+			if (arr[i] > 0) {
+				for (int j = 0; j < arr[i]; j++) {
+					bw.write(Integer.toString(i) + "\n");
+				}
 			}
 		}
+		bw.close();
+
 	}
+
 }
