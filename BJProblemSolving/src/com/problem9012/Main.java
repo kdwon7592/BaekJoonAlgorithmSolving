@@ -38,7 +38,7 @@ import java.util.Stack;
 }*/
 
 /*
- * ±¦ÂúÀº ÄÚµå¶ó °¡Á®¿Íº½.
+ * ê´œì°®ì•„ì„œ ê°€ì ¸ì™€ë´¤ìŒ
  */
 public class Main {
 
